@@ -1,0 +1,59 @@
+public class Week4 {
+
+    public static int max2Int(int number1, int number2) {
+        if (number1 > number2)
+        {
+            return number1;
+        }
+        else if (number1 < number2)
+        {
+            return number2;
+        }
+        else return number1;
+    }
+
+    public static int minArray(int[] arr) {
+        if (arr.length > 100 || arr.length == 0)
+        {
+            return 0;
+        }
+        else {
+            int minArr = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                if (minArr > arr[i])
+                {
+                    minArr = arr[i];
+                }
+            }
+            return minArr;
+        }
+    }
+
+    public static String calculateBMI(double weight, double height) {
+        double BMI = (weight)/(height * height);
+        BMI = Math.round(BMI*100)/100;
+        if (height <= 0 || weight <=0)
+        {
+            System.out.print ("Height and weight need to be > 0");
+        }
+        else{
+            if(BMI <= 18.5)
+            {
+                System.out.print (" Thiếu cân");
+            }
+            else if (18.6 < BMI & BMI < 22.9)
+            {
+                System.out.print ("Bình thường");
+            }
+            else  if (23 < BMI & BMI < 24.9)
+            {
+                System.out.print ("Thừa cân");
+            }
+            else if (BMI >= 25)
+            {
+                System.out.print ("Béo phì");
+            }
+        }
+        return "Khác";
+    }
+}
